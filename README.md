@@ -18,6 +18,6 @@ click이벤트 발생 시, input의 value를 innerText로 넣어줍니다.
 # 어려웠던 점, 해결
 - keydown 이벤트로 input value를 전달할 때 한글일 경우 마지막에 한글자씩 더 나오는 문제 
   -> keyup 이벤트로 교체
-- 이벤트에 의해 새로 만들어지는 요소에 이벤트를 전달하려고 때 요소가 null이 되는 문제 -> 
+- 이벤트에 의해 새로 만들어지는 요소에 이벤트를 전달하려고 때 요소가 null이 되는 문제
   -> (기존)innerHTML로 class를 부여하는 방식
   -> (해결)createElement, setAttribute, appendChild로 요소를 추가해주었다.
