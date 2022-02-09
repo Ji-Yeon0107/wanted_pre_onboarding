@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# 구현 방법
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Modal
+버튼 클릭 이벤트가 발생하면 class의 추가, 제거가 일어납니다.
+이를 통해 display:none, block을 설정합니다.
+모달창이 떠있는 동안은 body의 overflow hidden속성으로 모달창 이외의 상호작용을 막습니다.
+## Tab
+각 탭에 해당하는 내용을 Array로 저장해 놓습니다.
+map을 이용해, 대응되는 순서의 탭버튼을 눌렀을 때 Array의 내용을 순서대로 가져옵니다.
+## Tag
+keyup이벤트로 Enter key가 눌린 것을 식별합니다.
+Enter key가 눌리면 새 Element를 생성합니다.
+## Toggle
+class의 추가,제거를 이용합니다.
+## Click To Edit
+click이벤트 발생 시, input의 value를 innerText로 넣어줍니다.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# 어려웠던 점, 해결
+- keydown 이벤트로 input value를 전달할 때 한글일 경우 마지막에 한글자씩 더 나오는 문제 
+  -> keyup 이벤트로 교체
+- 이벤트에 의해 새로 만들어지는 요소에 이벤트를 전달하려고 때 요소가 null이 되는 문제 -> 
+  -> (기존)innerHTML로 class를 부여하는 방식
+  -> (해결)createElement, setAttribute, appendChild로 요소를 추가해주었다.
