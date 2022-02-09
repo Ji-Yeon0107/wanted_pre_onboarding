@@ -1,0 +1,27 @@
+.selected {
+  background-color: var(--theme-color);
+}
+.content {
+  height: 700px;
+}
+.tab-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 50px;
+  padding: 0;
+}
+.tab-list-item {
+  border: 1px solid var(--main-color);
+  transition: all 300ms;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-list-item:first-child {
+  border-radius: 15px 0 0 0;
+  background-color: var(--theme-color);
+}
+.tab-list-item:last-child {
+  border-radius: 0 15px 0 0;
+}

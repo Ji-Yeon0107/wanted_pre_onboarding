@@ -1,0 +1,81 @@
+:root {
+  --toggle-width: 70px;
+  --toggle-night-bg-color: rgb(205, 205, 205);
+  --toggle-day-bg-color: rgb(161, 192, 213);
+  --toggle-box-padding: 3px;
+}
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: all 400ms;
+}
+.night {
+  background: transparent;
+}
+.day {
+  background: var(--toggle-day-bg-color);
+}
+
+.toggle-box {
+  position: relative;
+  background-color: var(--toggle-day-bg-color);
+  border-radius: 20px;
+  width: var(--toggle-width);
+  height: 33px;
+  margin: 40px auto;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: var(--toggle-box-padding);
+  overflow: hidden;
+}
+/* after가 오른쪽으로 움직이게. 본체보다 layer가 위이다.*/
+.toggle-box::after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  background-color: var(--toggle-night-bg-color);
+  border-radius: 20px;
+  width: var(--toggle-width);
+  height: 33px;
+  padding: var(--toggle-box-padding);
+  transform: translateX(calc(-100% - var(--toggle-box-padding)));
+  transition: all 400ms;
+}
+.toggle-box__day::after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  background-color: var(--toggle-night-bg-color);
+  border-radius: 20px;
+  width: var(--toggle-width);
+  height: 33px;
+  padding: var(--toggle-box-padding);
+  transform: translateX(calc(0px - var(--toggle-box-padding)));
+  transition: all 400ms;
+}
+.toggle-btn {
+  position: relative;
+  z-index: 20;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 15px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 400ms;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+}
+.toggle-btn__night {
+  transform: translateX(var(--toggle-box-padding));
+}
+.toggle-btn__day {
+  transform: translateX(
+    calc(var(--toggle-width) / 2 + var(--toggle-box-padding))
+  );
+}

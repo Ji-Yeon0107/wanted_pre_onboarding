@@ -1,0 +1,35 @@
+.tag-box {
+  display: flex;
+  border: 3px solid var(--dark-color);
+  flex-wrap: wrap;
+  height: 50px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag {
+  width: fit-content;
+  margin: 2.5px 5px;
+  border-radius: 15px;
+  border: 2px solid var(--theme-color);
+  padding: 8px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+.tag-input {
+  display: block;
+  background-color: transparent;
+  border: none;
+  margin-left: 10px;
+  text-indent: 10px;
+  color: var(--main-color);
+}
+.tag-remove-btn {
+  border: none;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  margin-left: 10px;
+}
