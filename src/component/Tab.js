@@ -1,5 +1,5 @@
-import React from "react";
-import "../style/tab.css";
+import React, { useEffect } from "react";
+import "../style/Tab.css";
 
 export const Tab = () => {
   const contentTextArr = [
@@ -10,17 +10,14 @@ export const Tab = () => {
     `
     <h1>두 번째 탭</h1>
     <div>다음 탭을 클릭해보세요</div>
-
     `,
     `
     <h1>세 번째 탭</h1>
-        <div>다음 탭을 클릭해보세요</div>
-
+    <div>다음 탭을 클릭해보세요</div>
     `,
     `
     <h1>네 번째 탭</h1>
-        <div>다음 탭을 클릭해보세요</div>
-
+    <div>다음 탭을 클릭해보세요</div>
     `,
   ];
   const itemArr = [1, 2, 3, 4];
@@ -33,14 +30,13 @@ export const Tab = () => {
       item.classList = "tab-list-item";
     });
 
-    if (tabItems[0] !== e.target) {
-      tabItems[0].style.backgroundColor = "transparent";
-    }
-
     itemClass.toggle("selected");
     content.innerHTML = contentTextArr[i];
   }
-
+  useEffect(() => {
+    const tabItems = document.querySelectorAll(".tab-list-item");
+    tabItems[0].classList.toggle("selected");
+  }, []);
   return (
     <>
       <h1>Tab</h1>
