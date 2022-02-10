@@ -21,14 +21,11 @@ export const Toggle = () => {
   return (
     <>
       <h1>Toggle</h1>
-      <div className="toggle-box">
-        <button
-          onClick={() => {
+      <div className="toggle-box" onClick={(e) => {
             toggleMainBg();
-            handleToggleBtn();
-          }}
-          className="toggle-btn toggle-btn__night"
-        ></button>
+            handleToggleBtn(e);
+          }}>
+        <button className="toggle-btn toggle-btn__night"></button>
       </div>
       <section className="bg night"></section>
     </>

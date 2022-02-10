@@ -11,10 +11,10 @@
 .tag {
   width: fit-content;
   height: 40px;
-  margin: 2.5px 5px;
+  margin-left: 10px;
+  padding: 0 5px;
   border-radius: 15px;
   border: 2px solid var(--theme-color);
-  padding: 0 5px;
   font-size: 16px;
   display: flex;
   align-items: center;
@@ -30,7 +30,9 @@
 }
 .tag-remove-btn {
   border: none;
-  border-radius: 15px;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
   background-color: var(--main-color);
   margin-left: 10px;
 }

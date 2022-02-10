@@ -28,7 +28,11 @@ export const ClickToEdit = () => {
       className="submit"
       onClick={(e) => {
         e.preventDefault();
-        onSubmit(e);
+        const nameInput = document.querySelector('.input__name')
+        const ageInput = document.querySelector('.input__age')
+        if(e.target !== nameInput && e.target !== ageInput) {
+          onSubmit(e)
+        };
       }}
     >
       <h1>Click To Edit</h1>
@@ -51,6 +55,7 @@ export const ClickToEdit = () => {
           type="number"
           className="input__age"
           value={ageValue}
+          max="100"
           onChange={(e) => {
             onChange(e, setAgeValue);
           }}
