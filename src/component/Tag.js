@@ -8,7 +8,6 @@ export const Tag = () => {
     if (e.key === "Enter") {
       if (e.target.value === "") return;
       // if (e.isComposing === true) return;
-      if (e.key === "Enter") {
         const newTag = document.createElement("div");
         newTag.setAttribute("class", "tag");
         newTag.textContent = e.target.value;
@@ -23,7 +22,6 @@ export const Tag = () => {
         removeBtn.addEventListener("click", (e) => {
           e.target.parentNode.remove();
         });
-      }
     }
   }
   return (
