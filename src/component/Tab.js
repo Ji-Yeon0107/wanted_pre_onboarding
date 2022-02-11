@@ -25,11 +25,6 @@ export const Tab = () => {
     const content = document.querySelector(".content");
     const itemClass = e.target.classList;
     const tabItems = document.querySelectorAll(".tab-list-item");
-
-    tabItems.forEach((item) => {
-      item.classList = "tab-list-item";
-    });
-
     itemClass.toggle("selected");
     content.innerHTML = contentTextArr[i];
   }
